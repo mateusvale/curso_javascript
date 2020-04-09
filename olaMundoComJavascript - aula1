@@ -1,0 +1,8 @@
+.Para escrever um codigo em javascript no html, precisaremos coloca-lo no seguinte local:
+	<script>
+	
+	</script>
+###########################################################################
+.alert("oi")  //ira criar um pop-up na tela
+###########################################################################
+.console.log("oi") //ira criar um log no console
