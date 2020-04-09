@@ -1,0 +1,6 @@
+Eh uma boa pratica, em vez de colocar o nome da tag (h1, h2, etc.), colocar o nome da classe ou do id:
+######################################################################################
+Outra boa pratica eh utilizar o script em javascript em outro arquivo.
+<script scr=<local do arquivo>
+######################################################################################
+
