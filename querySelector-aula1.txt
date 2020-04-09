@@ -1,0 +1,22 @@
+para eu ver toda a parte de html da pagina, basta entrar na ferramenta de desenvolvedor e colocar document.
+Ele que será a ponte entre o html e javascript.
+
+Caso queira procurar em javascript algo do html, basta fazer o seguinte comando:
+document.querySelector("<nomeDoElementoNoHtml>")
+
+###############################################################################################
+BOAS PRATICAS!!!!
+colocar o <script></script> no final do body.
+###############################################################################################
+Caso eu fizer isto:
+	var titulo = document.querySelector("h1");
+	console.log(titulo)
+Ira aparecer isto:
+	<h1>Aparecida Nutricao</h1>
+Nao queremos isso. Logo precisamos fazer o seguinte:
+	console.log(titulo.textContent) // isso ira aparecer somente o aparecida nutricao
+###############################################################################################
+Caso queria mudar o conteudo de uma tag, basta realizar o seguinte comando:
+	titulo.textContent = "banana"
+	
+	
