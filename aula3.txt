@@ -1,0 +1,25 @@
+A funcao querySelector so retorna um conteudo por vez. 
+Para que possamos retornar todos, precisamos utilizar a funcao querySelectorAll. Nesse caso, ira retornar um array contendo todos as classes.
+################################################################################################################################################
+Caso eu queira limitar o numero de casas decimais, preicsamos fazer o seguinte:
+    tdImc.textContent = imc #disso
+    tdImc.textContent = imc.toFixed(2); #Para isso. Nesse caso iremos ter apenas duas casas decimais.
+################################################################################################################################################
+Queremos mudar agora a cor da tabela quando for colocado algum valor que eh invalido. Pode-se fazer no proprio javascript, mas nao eh o ideal.
+O ideal seria fazer isso no css em vez do javascript.
+Caso fariamos isso no javascript somente, precisariamos fazer isso:
+
+    pacientes[i].style.color = "red"; # Isso fara com que toda a linha fique com as letras vermelhas
+    ou
+    pacientes[i].style.backgroundColor = "red"; # Isso fara com que toda a linha da tabela fique com a cor vermelha.
+                                            # Note que era para ser background-color, porem ficou em (camelCase). Isso pq o javascript nao aceita -.  
+
+Caso fariamos isso usando css, precisariamos fazer isso:
+    
+    > No css:
+        .paciente-invalido{
+            background-color: lightcoral;
+        }   
+
+    > No javascript:
+        pacientes[i].classList.add("paciente-invalido");
