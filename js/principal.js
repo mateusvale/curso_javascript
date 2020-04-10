@@ -1,7 +1,7 @@
 var titulo = document.querySelector(".titulo");
-titulo.textContent = "Aparecida Nutricionista"; //mudando o nome do titulo
+titulo.textContent = "Aparecida Nutricionista"; //mudando o nome do titulo com .textContent
 
-// Criando a variavel paciente utilizando o querySelector do document + classe:
+// Criando a variavel paciente utilizando o querySelector do document + id:
 var paciente = document.querySelector("#primeiro-paciente");
 
 //Criando a variavel tdPeso utilizando o querySelector da variavel paciente + classe:
@@ -18,7 +18,7 @@ var imc = peso / (altura*altura);
 //Criando a variavel tdImc utilizando o querySelector da variavel paciente + classe:
 var tdImc = paciente.querySelector(".info-imc");
 
-//verificacao do pesso e da altura
+//verificacao do peso e da altura
 var pesoEhValido = true;
 var alturaEhValido = true;
 
@@ -30,7 +30,7 @@ if (altura <= 0 || altura >= 3){
 }
 
 if (pesoEhValido && alturaEhValido){
-    tdImc.textContent = imc; //mudando o valor do imc
+    tdImc.textContent = imc; //mudando o valor do textContent do tdImc para o valor do calculo do imc (caso esteja nos parametros certos)
 }
 else if(pesoEhValido && !alturaEhValido){
     tdImc.textContent = "altura invalida";
