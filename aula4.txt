@@ -1,0 +1,17 @@
+Escutador de eventos:
+
+caso eu queira logar ao apertar no titulo, por exemplo, precisamos realizar as seguintes acoes:
+
+    pode-se utilizar essa funcao:
+
+        titulo.addEventListener("click",mostraMensagem);
+
+        function mostraMensagem(){
+            console.log("Fui apertado");
+        }
+
+    ou pode-se utilizar a funcao direta:
+
+        titulo.addEventListener("click",function(){
+            console.log("Fui apertado");
+        });

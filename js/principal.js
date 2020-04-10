@@ -58,3 +58,13 @@ else {
     tdImc.textContent = "peso e altura invalidos";
     pacientes[i].classList.add("paciente-invalido");
 }}
+
+//criando uma variavel a partir do document.querySelector:
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+
+//criando um evento a partir do click do botao
+botaoAdicionar.addEventListener("click",function(){
+    console.log("Fui apertado");
+});
+
+
