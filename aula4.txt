@@ -25,3 +25,57 @@ Caso queiramos, via javascript, criar uma tag html, precisaremos realizar o segu
 #################################################################################################################################################################################
 E caso queriamos transformar um tag criada em filha de outra tag, precisamos realizar o seguinte:
     <nome da tag pai>.appendChild("<nome da tag que quer ser filha>");
+#################################################################################################################################################################################
+
+Em um codigo, quando nele associamos uma função ao evento click, aquele disparado toda vez que o elemento for clicado, em nosso caso, um botão, a vantagem do addEventListener é 
+que podemos executar mais de uma função para o mesmo evento, como nesse exemplo a seguir:
+
+    <button id="botao">clique-me</button>
+    <script>    
+        var botao = document.querySelector('#botao');
+        function botaoHandler() {
+            alert('Botão clicado');
+        }
+        function outroHandler() {
+            alert('Botão clicado também!');
+        }
+        botao.addEventListener('click', botaoHandler);
+        botao.addEventListener('click', outroHandler);
+    </script>
+
+No caso acima, ira acontecer uma fila de eventos, o qual o primeiro sera o botaoHandler e o seguinte sera o outroHandler.
+
+Pode ser feito uma funcao de click que tenha como parametro apenas uma funcao. Veja o exemplo a seguir:
+
+    <button id="botao">clique-me</button>
+    <script>
+        var botao = document.querySelector('#botao');
+        function botaoHandler() {
+            alert('Botão clicado');
+        }
+        function outroHandler() {
+            alert('Botão clicado também!');
+        }
+        botao.onclick = botaoHandler;
+    </script>
+
+No caso acima, utilizado a linha botao.onclick = botaoHandler. O onclick ira receber a funcao diretamente.
+Nao sera possivel colocar mais de duas funcoes nesse caso, pois o ultimo ira sobrescrever o anterior, como se pode ver a seguir:
+
+    function botaoHandler() {
+
+            alert('Botão clicado');
+        }
+
+        function outroHandler() {
+
+            alert('Botão clicado também!');
+        }
+
+
+        botao.onclick = botaoHandler;
+        botao.onclick = outroHandler; // substitui botaoHandler
+
+No caso acimam so a funcao outroHandler sera acionada.
+
+Logo, eh uma boa praticar trabalhar sempre com o addEventListener em vez do .onclick.
