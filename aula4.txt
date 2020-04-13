@@ -15,3 +15,13 @@ caso eu queira logar ao apertar no titulo, por exemplo, precisamos realizar as s
         titulo.addEventListener("click",function(){
             console.log("Fui apertado");
         });
+#################################################################################################################################################################################
+Ao apertar um botao, ele ira realizar a sua funcao de enviar e depois recarregar a pagina. Para que nao haja esse recarregamento da pagina, precisamos colocar o seguinte codigo:
+    botaoAdicionar.addEventListener("click",function(event){  # a funcao deve ter por parametro o event
+    event.preventDefault();                                   
+#################################################################################################################################################################################
+Caso queiramos, via javascript, criar uma tag html, precisaremos realizar o seguinte codigo:
+    var variavel = document.createElement("<tag>");
+#################################################################################################################################################################################
+E caso queriamos transformar um tag criada em filha de outra tag, precisamos realizar o seguinte:
+    <nome da tag pai>.appendChild("<nome da tag que quer ser filha>");
