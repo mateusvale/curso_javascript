@@ -28,3 +28,7 @@ No exercicio que estamos fazemos, nós fizemos as seguintes modificações:
 
     caso eu queira ver o nome do paciente, basta fazer isto:
         console.log(paciente.nome);
+
+###################################################################################################################
+Para limpar o formulario, no final, colocar a seguinte linha:
+    form.reset();
