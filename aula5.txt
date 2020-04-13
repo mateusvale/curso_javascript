@@ -1,0 +1,4 @@
+Sempre eh bom quebrar os codigos em diferentes arquivos. Isso fara com que o codigo fique melhor organizado.
+Porem, eh sempre bom lembrar que, ao realizar essa quebra, colocar esse novo arquivo como source no HTML principal:
+    <script src="js/principal.js"></script>
+	<script src="js/form.js"></script>
