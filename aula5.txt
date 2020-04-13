@@ -2,3 +2,29 @@ Sempre eh bom quebrar os codigos em diferentes arquivos. Isso fara com que o cod
 Porem, eh sempre bom lembrar que, ao realizar essa quebra, colocar esse novo arquivo como source no HTML principal:
     <script src="js/principal.js"></script>
 	<script src="js/form.js"></script>
+###################################################################################################################
+Objeto -> representam coisas do mundo real que existem caracteristicas em comum. Eh uma entidade independente, com propriedades e tipos.
+Compare-o com uma xícara, por exemplo. Uma xícara é um objeto, com propriedades. Uma xícara tem uma cor, uma forma, peso, um material de composição, etc.
+        var xicara = {
+            cor: "azul",
+            peso: 125,
+            tipo: "chá"
+        };
+No exercicio que estamos fazemos, nós fizemos as seguintes modificações:
+    Em vez de fazer um por um como isto:
+        var nome = form.nome.value;
+        var peso = form.peso.value;
+        var altura = form.altura.value;
+        var gordura = form.gordura.value;
+
+    Pode-se fazer um objeto chamado paciente:
+
+    var paciente = {
+            nome: form.nome.value,
+            peso: form.peso.value,
+            altura: form.altura.value,
+            gordura: form.gordura.value
+        }
+
+    caso eu queira ver o nome do paciente, basta fazer isto:
+        console.log(paciente.nome);

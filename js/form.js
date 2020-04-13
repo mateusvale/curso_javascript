@@ -7,17 +7,14 @@ botaoAdicionar.addEventListener("click",function(event){
     
     var form = document.querySelector("#form-adiciona");
 
-    var nome = form.nome.value; //estou pegando o name de cada input e adicionando o .value - isso fara com que eu consiga pegar o valor do input
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
+    //Extraindo as informacoes do paciente do form
+    var paciente = obtemPacienteDoFormulario(form); //preciso colocar o form como parametro para pegar as informacoes dele.
 
     //para que possamos criar um paciente com esses dados, precisamos criar uma td (relativa ao novo paciente) e 5 novas tds (nome, peso, altura, gordura e imc)
-
     //criacao de uma tr
     var pacienteTr = document.createElement("tr");
 
-    //criacao das 5 tds:
+    //criacao das 5 td's:
     var nomeTd = document.createElement("td");
     var pesoTd = document.createElement("td");
     var alturaTd = document.createElement("td");
@@ -43,3 +40,18 @@ botaoAdicionar.addEventListener("click",function(event){
     tabela.appendChild(pacienteTr);
 
 });
+
+//Funcao para extrair as informacoes do paciente do form
+function obtemPacienteDoFormulario(form){
+    //criando um ojeto
+    var paciente = {
+        nome: form.nome.value, //estou pegando o name de cada input e adicionando o .value - isso fara com que eu consiga pegar o valor do input
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calculaImc(form.peso.value,form.altura.value)
+    }
+
+    return paciente; //retornando o objeto paciente
+}
+
