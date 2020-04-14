@@ -33,15 +33,8 @@ var imc = calculaImc(peso,altura);
 var tdImc = pacientes[i].querySelector(".info-imc");
 
 //verificacao do peso e da altura
-var pesoEhValido = true;
-var alturaEhValido = true;
-
-if (peso <= 0 || peso >= 1000){
-    pesoEhValido = false;
-}
-if (altura <= 0 || altura >= 3){
-    alturaEhValido = false;
-}
+var pesoEhValido = validaPeso(peso);
+var alturaEhValido = validaAltura(altura);
 
 if (pesoEhValido && alturaEhValido){
     tdImc.textContent = imc //mudando o valor do textContent do tdImc para o valor do calculo do imc (caso esteja nos parametros certos)
@@ -64,4 +57,22 @@ function calculaImc (peso,altura){
     var imc = 0;
     imc =  peso / (altura*altura);
     return imc.toFixed(2); //Esse .toFixed(2) fara com que tenha apenas duas casas decimais.
+}
+
+function validaPeso(peso){
+    if (peso <= 0 || peso >= 1000){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+function validaAltura(altura){
+    if (altura <= 0 || altura >= 3){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
