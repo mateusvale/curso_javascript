@@ -145,3 +145,13 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;  		/*ira apagar o conteudo todo - vai ficar totalmente branco*/
 	transition: 0.5s; 	/*ira fazer uma transicao de meio segundo ate ficar todo branco*/
 }
+
+#filtrar-tabela{
+	width: 200px;
+	height: 25px;
+	margin-bottom: 10px;
+}
+
+.invisivel{
+	display: none;
+}

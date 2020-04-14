@@ -1,0 +1,10 @@
+Para pegar as letras digitadas de um formulario, podemos realizar o seguinte codigo:
+    campoFiltro.addEventListener("input", function(){
+        console.log(this.value); // ou console.log(campoFiltro.value);
+    )}
+
+####################################################################################
+Para procurar os nomes de acordo com o que eh digitado no texto:
+    
+    var expressao = new RegExp(this.value, "i");    // "i" eh nao caseSensitive
+    if (!expressao.test(nome)){   
