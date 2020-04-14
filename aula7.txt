@@ -1,0 +1,9 @@
+A funcao addEventListener tem varios parametros. Um deles eh o duplo click do mouse.
+Ela sera feita assim:
+    paciente.addEventListener("dblclick", function(){
+        this.remove();
+    }
+
+####################################################################################
+Para remover uma tr, basta realizar o seguinte comando:
+    this.remove();
