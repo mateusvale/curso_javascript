@@ -1,0 +1,12 @@
+Funcao forEach(dado) : eh como se fosse um for porem ja se sabe o tamanho.
+##########################################################################
+Para apagar uma ul, precisamos fazer a seguinte tarefa:
+    ul.innerHTML = "";
+
+Para editar o HTML interno, como o innerHTML é uma propriedade, utilizamos um sinal de igual (=). Fazemos:
+
+ObjetoDeUmElementoHTML.innerHTML = "Novo conteúdo"
+E para obter o HTML interno, fazemos:
+
+ObjetoDeUmElementoHTML.innerHTML
+O seu retorno será todo o conteúdo HTML, tanto tags, atributos, classes, etc, no formato de uma String.

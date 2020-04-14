@@ -16,13 +16,11 @@ botaoAdicionar.addEventListener("click",function(event){
     //tds (nome, peso, altura, gordura e imc). Nesse caso, iremos utilizar a funcao montaTr com paciente como parametro:
     var pacienteTr = montaTr (paciente);
     
-    
+
     //precisamos ver se esse paciente eh valido:
     var erros = validaPaciente(paciente);
-
     if (erros.length > 0){
-        var mensagemErro = document.querySelector("#mensagem-erro");
-        mensagemErro.textContent = erros;
+        exibeMensagensDeErro(erros);
         return;
     }
 
@@ -31,9 +29,29 @@ botaoAdicionar.addEventListener("click",function(event){
     tabela.appendChild(pacienteTr);
 
     form.reset();
+    var mensagemDeErro = document.querySelector("#mensagens-erro");
+    mensagemDeErro  .innerHTML = "";
        
 
 });
+
+//#########################################################################################################################
+//Area de funcoes
+
+//funcao para exibir erros - ira utilizar a ul e criar li's:
+function exibeMensagensDeErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro){       //como se fosseum for
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li)
+    })
+}
+
+//#########################################################################################################################
 
 //Funcao para extrair as informacoes do paciente do form
 function obtemPacienteDoFormulario(form){
@@ -48,6 +66,8 @@ function obtemPacienteDoFormulario(form){
 
     return paciente; //retornando o objeto paciente
 }
+
+//#########################################################################################################################
 
 //Funcao para criacao de uma tr. Preciso usar como parametro o objeto paciente:
 function montaTr (paciente){
@@ -67,6 +87,8 @@ function montaTr (paciente){
     return pacienteTr;  //precisamos retornar a tr
 }
 
+//#########################################################################################################################
+
 //Funcao para criacao de td. Estamos colocando essa tr com uma classe igual das outras tr. Utilizando o objeto paciente como dado.
 function montaTd (dado, classe){
     var td = document.createElement("td"); //criacao da td
@@ -76,6 +98,8 @@ function montaTd (dado, classe){
     return td;
 
 }
+
+//#########################################################################################################################
 
 function validaPaciente(paciente){
 
@@ -87,6 +111,14 @@ function validaPaciente(paciente){
 
     if (!validaAltura(paciente.altura)) {
         erros.push("Altura é inválida");
+    }
+
+    if (paciente.nome.length == 0){
+        erros.push("O nome nao pode estar em branco");
+    }
+
+    if (paciente.gordura.length == 0){
+        erros.push("A gordura nao pode estar em branco");
     }
 
     return erros;
