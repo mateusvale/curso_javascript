@@ -7,3 +7,16 @@ Ela sera feita assim:
 ####################################################################################
 Para remover uma tr, basta realizar o seguinte comando:
     this.remove();
+
+####################################################################################
+
+O problema do comando acima eh que nao ira conseguir apagar as td que criou com o 
+formulario, logo sera preciso fazer as seguintes operacoes:
+
+    tabela.addEventListener("dblclick", function(event){
+        var alvoEvento = event.target;                      // com o .target, iremos conseguir pegar a tag q apertarmos
+        var paiDoAlvo = alvoEvento.parentNode;              // nao queremos apagar a tag do target, e sim o pai, que eh a linha
+        paiDoAlvo.remove();                                 // logo iremos apagar a linha da tabela. 
+
+irei colocar o event.target, o qual ira pegar a tag q foi apertada e depois iremos a pagar o pai (parentNode)
+
