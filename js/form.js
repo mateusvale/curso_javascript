@@ -12,9 +12,7 @@ botaoAdicionar.addEventListener("click",function(event){
     //Extraindo as informacoes do paciente do form utilizando a funcao obtemPacienteDoFormulario com o form como parametro:
     var paciente = obtemPacienteDoFormulario(form);
 
-       //para que possamos criar um paciente com esses dados, precisamos criar uma td (relativa ao novo paciente) e 5 novas 
-    //tds (nome, peso, altura, gordura e imc). Nesse caso, iremos utilizar a funcao montaTr com paciente como parametro:
-    var pacienteTr = montaTr (paciente);
+    
     
 
     //precisamos ver se esse paciente eh valido:
@@ -24,9 +22,7 @@ botaoAdicionar.addEventListener("click",function(event){
         return;
     }
 
-    //como iremos entao colocar essa tr na tabela? Iremos tbm utilizar o append child:
-    var tabela = document.querySelector("#tabela-pacientes"); //pegamos o tdbody onde tem a tabela contendo todos os tr`s
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
     var mensagemDeErro = document.querySelector("#mensagens-erro");
@@ -34,6 +30,19 @@ botaoAdicionar.addEventListener("click",function(event){
        
 
 });
+
+function adicionaPacienteNaTabela (paciente){
+
+    //para que possamos criar um paciente com esses dados, precisamos criar uma td (relativa ao novo paciente) e 5 novas 
+    //tds (nome, peso, altura, gordura e imc). Nesse caso, iremos utilizar a funcao montaTr com paciente como parametro:
+    var pacienteTr = montaTr (paciente);
+
+    //como iremos entao colocar essa tr na tabela? Iremos tbm utilizar o append child:
+    var tabela = document.querySelector("#tabela-pacientes"); //pegamos o tdbody onde tem a tabela contendo todos os tr`s
+    tabela.appendChild(pacienteTr);
+
+    
+}
 
 //#########################################################################################################################
 //Area de funcoes
